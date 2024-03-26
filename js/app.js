@@ -26,10 +26,12 @@ function calculaQuantoPrecisaNaFinal(media) {
 
 function verificaMedia(media) {
   let DivquantoPrecisa = document.querySelector("#quantoPrecisa");
-  if(media < 7 && media >= 4) {
+  if(media >= 4 && media < 7) {
     let quantoPrecisa = calculaQuantoPrecisaNaFinal(media)
     DivquantoPrecisa.innerHTML = `<br> Você precisa de ${quantoPrecisa.toFixed(1)} na final para passar`
+  } else if (media < 4) {
+    DivquantoPrecisa.innerHTML = 'Parabéns, você não passou!'
   } else {
-    DivquantoPrecisa.innerHTML = 'Parabéns, você já passou!'
+    DivquantoPrecisa.innerHTML = 'Parabéns, você fez mais que sua obrigação!'
   }
 }
